@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function validateForm(event) {
+        
+            event.preventDefault();
+
+        
+            var name = document.forms["registrationForm"]["name"];
+            var email = document.forms["registrationForm"]["email"];
+            var phone = document.forms["registrationForm"]["phone"];
+
+        
+            if (name.value == "") {
+                alert("Name is required!");
+                name.focus();
+                name.value = prompt("Please enter your Name: ");
+                if (name.value == "") return false;
+            }
+
+            if (email.value == "") {
+                alert("Email is required!");
+                email.focus();
+                email.value = prompt("Please enter your Email: ");
+                if (email.value == "") return false;
+            }
+
+            if (phone.value == "") {
+                alert("Mobile Number is required!");
+                phone.focus();
+                phone.value = prompt("Please enter your Mobile Number: ");
+                if (phone.value == "") return false;
+            }
+
+            
+            alert("Form submitted successfully!");
+            document.forms["registrationForm"].submit();
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form name="registrationForm" onsubmit="validateForm(event)">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <label>Mobile Number:</label>
+        <input type="tel" name="phone" required>
+        <br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

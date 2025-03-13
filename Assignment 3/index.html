@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+
+    <script type="text/javascript">
+    function clearInput() {
+        document.f1.t1.value = "";
+    }
+
+    function calculate() {
+        try {
+            document.f1.t1.value = eval(document.f1.t1.value);
+        } catch (e) {
+            document.f1.t1.value = "Error";
+        }
+    }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        <input type="text" name="t1" value=" "/><br>
+
+        <input type="button" value="0" onclick="document.f1.t1.value+='0'"/>
+        <input type="button" value="1" onclick="document.f1.t1.value+='1'"/>
+        <input type="button" value="2" onclick="document.f1.t1.value+='2'"/><br>
+        <input type="button" value="3" onclick="document.f1.t1.value+='3'"/>
+        <input type="button" value="4" onclick="document.f1.t1.value+='4'"/>
+        <input type="button" value="5" onclick="document.f1.t1.value+='5'"/><br>
+        <input type="button" value="6" onclick="document.f1.t1.value+='6'"/>
+        <input type="button" value="7"  onclick="document.f1.t1.value+='7'"/>
+        <input type="button" value="8"  onclick="document.f1.t1.value+='8'"/><br>
+        <input type="button" value="9" onclick="document.f1.t1.value+='9'"/>
+
+        
+        <input type="button" value="+" onclick="document.f1.t1.value+='+'"/>
+        <input type="button" value="-" onclick="document.f1.t1.value+='-'"/><br>
+        <input type="button" value="" onclick="document.f1.t1.value+=''"/>
+        <input type="button" value="/" onclick="document.f1.t1.value+='/'"/>
+
+       
+        <input type="button" value="C" onclick="clearInput()"/>
+        <input type="button" value="=" onclick="calculate()"/>
+    </form>
+</body>
+</html>
